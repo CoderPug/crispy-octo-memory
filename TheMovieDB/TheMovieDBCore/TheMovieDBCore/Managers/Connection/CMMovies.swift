@@ -11,6 +11,7 @@ import Foundation
 struct CMMoviesConstants {
     
     static let URIDiscoverMovies = "discover/movie"
+    static let URLParamPage = "page"
 }
 
 struct CMMoviesJSONKeys {
@@ -19,9 +20,10 @@ struct CMMoviesJSONKeys {
 
 extension ConnectionManager {
     
-    public func requestDiscoverMovies(_ handler: @escaping (Result<MoviePage>) -> Swift.Void ) {
+    public func requestDiscoverMovies(page: Int, handler: @escaping (Result<MoviePage>) -> Swift.Void ) {
         
-        request(URI: CMMoviesConstants.URIDiscoverMovies) { data, response, error in
+        request(URI: CMMoviesConstants.URIDiscoverMovies,
+                parameters: [CMMoviesConstants.URLParamPage: "\(page)"]) { data, response, error in
             
             guard let data = data, error == nil else {
                 

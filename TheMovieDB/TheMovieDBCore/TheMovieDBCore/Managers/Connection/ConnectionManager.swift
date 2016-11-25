@@ -20,6 +20,12 @@ struct URLParametersKeys {
     static let language = "language"
 }
 
+func +<Key, Value> (lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] {
+    var result = lhs
+    rhs.forEach{ result[$0] = $1 }
+    return result
+}
+
 public struct ConnectionManager {
     
     public var configuration: APIData?
@@ -28,22 +34,33 @@ public struct ConnectionManager {
         
     }
     
-    func request(URI: String, handler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
-        
+    func request(URI: String,
+                 parameters: [String: String],
+                 handler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    
         guard let configuration = configuration else {
             
             handler(nil, nil, TheMovieDBError.missingConfigurationData)
             return
         }
         
-        let parameters = [URLParametersKeys.APIKey: configuration.APIToken,
-                          URLParametersKeys.language: configuration.language].httpParameters()
+        let baseParameters = [URLParametersKeys.APIKey: configuration.APIToken,
+                              URLParametersKeys.language: configuration.language ?? ""]
         
-        let url = URL(string:"\(configuration.serverURL)\(URI)?\(parameters)")!
+        let composedParameters = baseParameters + parameters
+
+        let httpParameters = composedParameters.httpParameters()
+        
+        let url = URL(string:"\(configuration.serverURL)\(URI)?\(httpParameters)")!
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: handler)
         
         task.resume()
+    }
+    
+    func request(URI: String, handler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+        
+        request(URI: URI, parameters: [:], handler: handler)
     }
     
 }
