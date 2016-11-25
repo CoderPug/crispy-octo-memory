@@ -9,11 +9,21 @@
 import UIKit
 import TheMovieDBCore
 
+enum MovieDetailSections {
+    
+    case poster
+    case name
+    case genre
+    case overview
+    case releaseDate
+}
+
 class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var sections: [MovieDetailSections] = [.poster, .name, .releaseDate, .genre, .overview]
     
-    let movie: Movie? = nil
+    var movie: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +36,16 @@ class MovieDetailViewController: UIViewController {
     func configureView() {
         
         title = NSLocalizedString("MOVIEDETAILVC_TITLE", comment: "MOVIELISTVC_TITLE")
+        
         tableView.register(UINib.init(nibName: InformationTableViewCellConstants.nibName,
                                       bundle: Bundle.main),
                            forCellReuseIdentifier: InformationTableViewCellConstants.cellIdentifier)
+        tableView.register(UINib.init(nibName: ImageTableViewCellConstants.nibName,
+                                      bundle: Bundle.main),
+                           forCellReuseIdentifier: ImageTableViewCellConstants.cellIdentifier)
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 60
+        tableView.estimatedRowHeight = InformationTableViewCellConstants.estimatedHeight
     }
     
 }
@@ -40,20 +54,40 @@ extension MovieDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: InformationTableViewCellConstants.cellIdentifier)
-        as? InformationTableViewCell else {
+        let section = sections[indexPath.row]
+        
+        guard let movie = movie else {
             
             return UITableViewCell()
         }
         
-        cell.load(title: "Ejemplo", detail: "de un texto cualquiera")
-        
-        return cell
+        if section == .poster {
+            
+            guard let imageCell = tableView.dequeueReusableCell(withIdentifier:
+                ImageTableViewCellConstants.cellIdentifier) as? ImageTableViewCell else {
+                    
+                    return UITableViewCell()
+            }
+            
+            imageCell.load(url: movie.imageURL)
+            return imageCell
+            
+        } else {
+            
+            guard let informationCell = tableView.dequeueReusableCell(withIdentifier:
+                InformationTableViewCellConstants.cellIdentifier) as? InformationTableViewCell else {
+            
+                    return UITableViewCell()
+            }
+            
+            return informationCell.cell(for: section, movie: movie)
+        }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return sections.count
     }
 
 }
