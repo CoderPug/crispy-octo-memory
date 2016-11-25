@@ -62,11 +62,10 @@ extension Movie {
 
 public struct MoviePage {
     
-    var page: Int
-    var totalResults: Int
-    var totalPages: Int
-    var movies: [Movie]?
-    
+    public var page: Int
+    public var totalResults: Int
+    public var totalPages: Int
+    public var movies: [Movie]?
     
     init(page: Int, totalResults: Int, totalPages: Int, movies: [Movie]?) {
         
