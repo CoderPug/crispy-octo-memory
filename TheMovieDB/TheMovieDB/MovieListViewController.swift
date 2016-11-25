@@ -47,7 +47,10 @@ class MovieListViewController: UIViewController {
     
     func configureView() {
         
+        view.backgroundColor = Appearance.Colors.empty
+        
         title = NSLocalizedString("MOVIELISTVC_TITLE", comment: "MOVIELISTVC_TITLE")
+        
         collectionView.register(UINib.init(nibName: MovieCollectionViewCellConstants.nibName,
                                            bundle: Bundle.main),
                                 forCellWithReuseIdentifier: MovieCollectionViewCellConstants.cellIdentifier)
