@@ -24,6 +24,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        custommize()
+    }
+    
+    func custommize() {
+        
+        self.labelTitle.font = Appearance.Fonts.h2
+        self.labelTitle.textColor = Appearance.Colors.secondary
     }
     
     func setConfiguration(_ config: APIData?) {

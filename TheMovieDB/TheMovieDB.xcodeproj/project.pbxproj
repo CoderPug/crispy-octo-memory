@@ -18,6 +18,9 @@
 		C13784AD1DE890BF00B9D17C /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C13784AB1DE890BF00B9D17C /* MovieCollectionViewCell.xib */; };
 		C13784AF1DE89AA900B9D17C /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784AE1DE89AA900B9D17C /* Appearance.swift */; };
 		C13784B21DE89DF200B9D17C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C13784B41DE89DF200B9D17C /* Localizable.strings */; };
+		C13784B71DE89FE800B9D17C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784B61DE89FE800B9D17C /* MovieDetailViewController.swift */; };
+		C13784BA1DE8A2D800B9D17C /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784B81DE8A2D800B9D17C /* InformationTableViewCell.swift */; };
+		C13784BB1DE8A2D800B9D17C /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C13784B91DE8A2D800B9D17C /* InformationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		C13784AE1DE89AA900B9D17C /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		C13784B31DE89DF200B9D17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C13784B51DE89E0000B9D17C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C13784B61DE89FE800B9D17C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		C13784B81DE8A2D800B9D17C /* InformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
+		C13784B91DE8A2D800B9D17C /* InformationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 				C13784AE1DE89AA900B9D17C /* Appearance.swift */,
 				C137844D1DE87CEB00B9D17C /* LaunchScreen.storyboard */,
 				C13784461DE87CEB00B9D17C /* MovieListViewController.swift */,
+				C13784B61DE89FE800B9D17C /* MovieDetailViewController.swift */,
 				C13784481DE87CEB00B9D17C /* Main.storyboard */,
 				C13784A91DE8909000B9D17C /* Views */,
 				C137844B1DE87CEB00B9D17C /* Assets.xcassets */,
@@ -148,6 +155,8 @@
 			children = (
 				C13784AA1DE890BF00B9D17C /* MovieCollectionViewCell.swift */,
 				C13784AB1DE890BF00B9D17C /* MovieCollectionViewCell.xib */,
+				C13784B81DE8A2D800B9D17C /* InformationTableViewCell.swift */,
+				C13784B91DE8A2D800B9D17C /* InformationTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 			files = (
 				C13784B21DE89DF200B9D17C /* Localizable.strings in Resources */,
 				C137844F1DE87CEB00B9D17C /* LaunchScreen.storyboard in Resources */,
+				C13784BB1DE8A2D800B9D17C /* InformationTableViewCell.xib in Resources */,
 				C137844C1DE87CEB00B9D17C /* Assets.xcassets in Resources */,
 				C137844A1DE87CEB00B9D17C /* Main.storyboard in Resources */,
 				C13784AD1DE890BF00B9D17C /* MovieCollectionViewCell.xib in Resources */,
@@ -281,7 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13784BA1DE8A2D800B9D17C /* InformationTableViewCell.swift in Sources */,
 				C13784AC1DE890BF00B9D17C /* MovieCollectionViewCell.swift in Sources */,
+				C13784B71DE89FE800B9D17C /* MovieDetailViewController.swift in Sources */,
 				C13784471DE87CEB00B9D17C /* MovieListViewController.swift in Sources */,
 				C13784451DE87CEB00B9D17C /* AppDelegate.swift in Sources */,
 				C13784AF1DE89AA900B9D17C /* Appearance.swift in Sources */,
