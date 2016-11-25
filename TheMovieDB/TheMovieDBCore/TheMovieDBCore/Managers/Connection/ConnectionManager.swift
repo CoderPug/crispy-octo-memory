@@ -14,6 +14,12 @@ public enum Result<T> {
     case Success(T)
 }
 
+struct URLParametersKeys {
+    
+    static let APIKey = "api_key"
+    static let language = "language"
+}
+
 public struct ConnectionManager {
     
     public var configuration: APIData?
@@ -29,7 +35,8 @@ public struct ConnectionManager {
             return
         }
         
-        let parameters = ["api_key": configuration.APIToken, "language": configuration.language].httpParameters()
+        let parameters = [URLParametersKeys.APIKey: configuration.APIToken,
+                          URLParametersKeys.language: configuration.language].httpParameters()
         
         let url = URL(string:"\(configuration.serverURL)\(URI)?\(parameters)")!
         
