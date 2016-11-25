@@ -15,12 +15,11 @@ struct CMMoviesConstants {
 
 struct CMMoviesJSONKeys {
     
-    static let results = "results"
 }
 
 extension ConnectionManager {
     
-    public func requestDiscoverMovies(_ handler: @escaping (Result<[Movie]>) -> Swift.Void ) {
+    public func requestDiscoverMovies(_ handler: @escaping (Result<MoviePage>) -> Swift.Void ) {
         
         request(URI: CMMoviesConstants.URIDiscoverMovies) { data, response, error in
             
@@ -30,27 +29,19 @@ extension ConnectionManager {
                 return
             }
             
-            var movies: [Movie] = []
-            
-            guard let dictionary = data.toJSON(),
-                let results = dictionary[CMMoviesJSONKeys.results] as? [AnyObject] else {
-                    
-                    handler(.Failure(TheMovieDBError.missingKey))
-                    return
-            }
-            
-            for item in results {
+            guard let dictionary = data.toJSON() else {
                 
-                if let data = item as? [String: AnyObject] {
-                    
-                    if let movie = Movie(data: data) {
-                        
-                        movies.append(movie)
-                    }
-                }
+                handler(.Failure(TheMovieDBError.JSONParseFailed(reason: "")))
+                return
             }
             
-            handler(.Success(movies))
+            guard let moviePage = MoviePage(data: dictionary) else {
+                
+                handler(.Failure(TheMovieDBError.missingKey))
+                return
+            }
+            
+            handler(.Success(moviePage))
         }
     }
     
