@@ -35,6 +35,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func load(_ movie: Movie) {
         
         labelTitle.text = movie.title
+        imageViewPoster.image = nil
         
         guard let configuration = AppManager.sharedInstance.configuration,
             let imagesBaseURL = configuration.imagesBaseURL else {
