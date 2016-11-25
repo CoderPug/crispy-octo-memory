@@ -27,6 +27,8 @@ public struct Movie {
     
 }
 
+//MARK: Movie+JSON
+
 struct MovieJSONKeys {
     
     static let id = "id"
@@ -51,4 +53,71 @@ extension Movie {
         
         self.init(id: id, title: title, description: description, imageURL: imageURL, releaseDate: Date())
     }
+    
+}
+
+//MARK: -
+
+//MARK: MoviePage
+
+public struct MoviePage {
+    
+    var page: Int
+    var totalResults: Int
+    var totalPages: Int
+    var movies: [Movie]?
+    
+    
+    init(page: Int, totalResults: Int, totalPages: Int, movies: [Movie]?) {
+        
+        self.page = page
+        self.totalResults = totalResults
+        self.totalPages = totalPages
+        self.movies = movies
+    }
+    
+}
+
+//MARK: MoviePage+JSON
+
+struct MoviePageJSONKeys {
+    
+    static let page = "page"
+    static let results = "results"
+    static let totalResults = "total_results"
+    static let totalPages = "total_pages"
+}
+
+extension MoviePage {
+    
+    init?(data: [String: Any]) {
+        
+        guard let page = data[MoviePageJSONKeys.page] as? Int,
+            let totalResults = data[MoviePageJSONKeys.totalResults] as? Int,
+            let totalPages = data[MoviePageJSONKeys.totalPages] as? Int else {
+                
+                return nil
+        }
+        
+        var movies: [Movie]?
+        
+        if let results = data[MoviePageJSONKeys.results] as? [AnyObject] {
+            
+            movies = []
+            
+            for item in results {
+                
+                if let data = item as? [String: AnyObject] {
+                    
+                    if let movie = Movie(data: data) {
+                        
+                        movies?.append(movie)
+                    }
+                }
+            }
+        }
+        
+        self.init(page: page, totalResults: totalResults, totalPages: totalPages, movies: movies)
+    }
+    
 }
