@@ -48,11 +48,49 @@
                     <navigationItem key="navigationItem" id="9it-s0-NPK"/>
                     <connections>
                         <outlet property="collectionView" destination="QO4-N0-gCx" id="k7L-ll-JYc"/>
+                        <segue destination="ZEo-ya-bMh" kind="show" identifier="showDetail" id="CYr-4V-7i2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="75"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="0f8-o7-UHy">
+            <objects>
+                <viewController id="ZEo-ya-bMh" customClass="MovieDetailViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cJx-pB-2bk"/>
+                        <viewControllerLayoutGuide type="bottom" id="mvI-ty-5dk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ES-gi-uA6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncE-iU-KEu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZEo-ya-bMh" id="Cuq-ye-ZCw"/>
+                                    <outlet property="delegate" destination="ZEo-ya-bMh" id="U1t-aR-HiY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mvI-ty-5dk" firstAttribute="top" secondItem="ncE-iU-KEu" secondAttribute="bottom" id="7XU-vs-Lya"/>
+                            <constraint firstItem="ncE-iU-KEu" firstAttribute="leading" secondItem="7ES-gi-uA6" secondAttribute="leading" id="PP8-eE-atp"/>
+                            <constraint firstItem="ncE-iU-KEu" firstAttribute="top" secondItem="7ES-gi-uA6" secondAttribute="top" id="VK7-N5-S8G"/>
+                            <constraint firstAttribute="trailing" secondItem="ncE-iU-KEu" secondAttribute="trailing" id="uy4-1r-ruj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ncE-iU-KEu" id="FU5-5w-aY8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3E-MP-Xkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="73.313343328335833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gqH-5d-9LI">
