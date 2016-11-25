@@ -11,6 +11,9 @@
 		C137847D1DE87EB800B9D17C /* TheMovieDBCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137847C1DE87EB800B9D17C /* TheMovieDBCoreTests.swift */; };
 		C137847F1DE87EB800B9D17C /* TheMovieDBCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C13784711DE87EB800B9D17C /* TheMovieDBCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C13784931DE87F1E00B9D17C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784921DE87F1E00B9D17C /* Configuration.swift */; };
+		C137849A1DE8800B00B9D17C /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784991DE8800B00B9D17C /* ConnectionManager.swift */; };
+		C137849C1DE8801900B9D17C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137849B1DE8801900B9D17C /* Error.swift */; };
+		C137849E1DE8802400B9D17C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137849D1DE8802400B9D17C /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,9 @@
 		C137847C1DE87EB800B9D17C /* TheMovieDBCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBCoreTests.swift; sourceTree = "<group>"; };
 		C137847E1DE87EB800B9D17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C13784921DE87F1E00B9D17C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C13784991DE8800B00B9D17C /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		C137849B1DE8801900B9D17C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		C137849D1DE8802400B9D17C /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 			children = (
 				C13784711DE87EB800B9D17C /* TheMovieDBCore.h */,
 				C13784921DE87F1E00B9D17C /* Configuration.swift */,
+				C13784951DE87FEA00B9D17C /* Managers */,
+				C13784981DE87FEA00B9D17C /* Models */,
 				C13784721DE87EB800B9D17C /* Info.plist */,
 			);
 			path = TheMovieDBCore;
@@ -87,6 +95,39 @@
 				C137847E1DE87EB800B9D17C /* Info.plist */,
 			);
 			path = TheMovieDBCoreTests;
+			sourceTree = "<group>";
+		};
+		C13784951DE87FEA00B9D17C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C13784961DE87FEA00B9D17C /* Connection */,
+				C13784971DE87FEA00B9D17C /* Error */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C13784961DE87FEA00B9D17C /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				C13784991DE8800B00B9D17C /* ConnectionManager.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		C13784971DE87FEA00B9D17C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C137849B1DE8801900B9D17C /* Error.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		C13784981DE87FEA00B9D17C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C137849D1DE8802400B9D17C /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13784931DE87F1E00B9D17C /* Configuration.swift in Sources */,
+				C137849C1DE8801900B9D17C /* Error.swift in Sources */,
+				C137849E1DE8802400B9D17C /* Movie.swift in Sources */,
+				C137849A1DE8800B00B9D17C /* ConnectionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

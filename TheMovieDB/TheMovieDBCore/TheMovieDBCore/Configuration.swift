@@ -16,3 +16,21 @@ public protocol APIData {
     var imagesBaseURL: String? { get set }
     var posterSizes: Array<AnyObject>? { get set }
 }
+
+public struct Configuration: APIData {
+    
+    public var APIToken: String
+    public var serverURL: String
+    public var language: String?
+    public var imagesBaseURL: String?
+    public var posterSizes: Array<AnyObject>?
+    
+    public init(APIToken: String, serverURL: String) {
+        
+        self.APIToken = APIToken
+        self.serverURL = serverURL
+        self.language = nil
+        self.imagesBaseURL = nil
+        self.posterSizes = nil
+    }
+}
