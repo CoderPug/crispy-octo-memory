@@ -13,6 +13,7 @@
 		C137844C1DE87CEB00B9D17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C137844B1DE87CEB00B9D17C /* Assets.xcassets */; };
 		C137844F1DE87CEB00B9D17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C137844D1DE87CEB00B9D17C /* LaunchScreen.storyboard */; };
 		C137845A1DE87CEB00B9D17C /* TheMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784591DE87CEB00B9D17C /* TheMovieDBTests.swift */; };
+		C13784941DE87F4F00B9D17C /* TheMovieDBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C137848E1DE87EDA00B9D17C /* TheMovieDBCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +23,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = C13784401DE87CEB00B9D17C;
 			remoteInfo = TheMovieDB;
+		};
+		C137848D1DE87EDA00B9D17C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C13784881DE87EDA00B9D17C /* TheMovieDBCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C137846E1DE87EB800B9D17C;
+			remoteInfo = TheMovieDBCore;
+		};
+		C137848F1DE87EDA00B9D17C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C13784881DE87EDA00B9D17C /* TheMovieDBCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C13784771DE87EB800B9D17C;
+			remoteInfo = TheMovieDBCoreTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,6 +51,7 @@
 		C13784551DE87CEB00B9D17C /* TheMovieDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13784591DE87CEB00B9D17C /* TheMovieDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBTests.swift; sourceTree = "<group>"; };
 		C137845B1DE87CEB00B9D17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13784881DE87EDA00B9D17C /* TheMovieDBCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TheMovieDBCore.xcodeproj; path = TheMovieDBCore/TheMovieDBCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13784941DE87F4F00B9D17C /* TheMovieDBCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +76,7 @@
 		C13784381DE87CEB00B9D17C = {
 			isa = PBXGroup;
 			children = (
+				C13784911DE87EE400B9D17C /* TheMovieDBCore */,
 				C13784431DE87CEB00B9D17C /* TheMovieDB */,
 				C13784581DE87CEB00B9D17C /* TheMovieDBTests */,
 				C13784421DE87CEB00B9D17C /* Products */,
@@ -94,6 +112,23 @@
 				C137845B1DE87CEB00B9D17C /* Info.plist */,
 			);
 			path = TheMovieDBTests;
+			sourceTree = "<group>";
+		};
+		C13784891DE87EDA00B9D17C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C137848E1DE87EDA00B9D17C /* TheMovieDBCore.framework */,
+				C13784901DE87EDA00B9D17C /* TheMovieDBCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C13784911DE87EE400B9D17C /* TheMovieDBCore */ = {
+			isa = PBXGroup;
+			children = (
+				C13784881DE87EDA00B9D17C /* TheMovieDBCore.xcodeproj */,
+			);
+			name = TheMovieDBCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +201,12 @@
 			mainGroup = C13784381DE87CEB00B9D17C;
 			productRefGroup = C13784421DE87CEB00B9D17C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C13784891DE87EDA00B9D17C /* Products */;
+					ProjectRef = C13784881DE87EDA00B9D17C /* TheMovieDBCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C13784401DE87CEB00B9D17C /* TheMovieDB */,
@@ -173,6 +214,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C137848E1DE87EDA00B9D17C /* TheMovieDBCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TheMovieDBCore.framework;
+			remoteRef = C137848D1DE87EDA00B9D17C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C13784901DE87EDA00B9D17C /* TheMovieDBCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TheMovieDBCoreTests.xctest;
+			remoteRef = C137848F1DE87EDA00B9D17C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C137843F1DE87CEB00B9D17C /* Resources */ = {
