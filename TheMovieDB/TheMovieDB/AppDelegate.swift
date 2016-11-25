@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TheMovieDBCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = Appearance.Colors.principal
-        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: Appearance.Colors.principal,
-                                                      NSFontAttributeName: Appearance.Fonts.h1]
+        let appManager = AppManager.sharedInstance
+        appManager.configuration = Configuration.init(APIToken: "1f54bd990f1cdfb230adb312546d765d",
+                                                      serverURL: "https://api.themoviedb.org/3/")
+        appManager.configuration?.language = getLanguage() ?? "en"
+        
+        
+        globalAppearance()
         
         return true
     }
