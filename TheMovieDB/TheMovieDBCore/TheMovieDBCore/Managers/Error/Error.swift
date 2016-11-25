@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum ChallengeError: Error {
+    
+    case missingConfigurationData
+    case missingKey
+    case JSONParseFailed(reason: String)
+    case unkwnon
+}
