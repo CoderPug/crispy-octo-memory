@@ -22,8 +22,9 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var sections: [MovieDetailSections] = [.poster, .name, .releaseDate, .genre, .overview]
-    
     var movie: Movie?
+    
+    let emptyCell = UITableViewCell(style: .default, reuseIdentifier: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ extension MovieDetailViewController: UITableViewDataSource {
         
         guard let movie = movie else {
             
-            return UITableViewCell()
+            return emptyCell
         }
         
         if section == .poster {
@@ -66,7 +67,7 @@ extension MovieDetailViewController: UITableViewDataSource {
             guard let imageCell = tableView.dequeueReusableCell(withIdentifier:
                 ImageTableViewCellConstants.cellIdentifier) as? ImageTableViewCell else {
                     
-                    return UITableViewCell()
+                    return emptyCell
             }
             
             imageCell.load(url: movie.imageURL)
@@ -77,12 +78,11 @@ extension MovieDetailViewController: UITableViewDataSource {
             guard let informationCell = tableView.dequeueReusableCell(withIdentifier:
                 InformationTableViewCellConstants.cellIdentifier) as? InformationTableViewCell else {
             
-                    return UITableViewCell()
+                    return emptyCell
             }
             
             return informationCell.cell(for: section, movie: movie)
         }
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
