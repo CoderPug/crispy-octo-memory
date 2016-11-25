@@ -19,7 +19,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageViewPoster: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
-    var configuration: APIData?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,20 +28,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     func custommize() {
         
-        self.labelTitle.font = Appearance.Fonts.h2
-        self.labelTitle.textColor = Appearance.Colors.secondary
-    }
-    
-    func setConfiguration(_ config: APIData?) {
-        
-        configuration = config
+        self.labelTitle.font = Appearance.Fonts.h3
+        self.labelTitle.textColor = Appearance.Colors.second
     }
     
     func load(_ movie: Movie) {
         
         labelTitle.text = movie.title
         
-        guard let configuration = configuration,
+        guard let configuration = AppManager.sharedInstance.configuration,
             let imagesBaseURL = configuration.imagesBaseURL else {
                 
                 return

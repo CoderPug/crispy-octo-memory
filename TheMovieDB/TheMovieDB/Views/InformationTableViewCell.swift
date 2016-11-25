@@ -27,13 +27,12 @@ class InformationTableViewCell: UITableViewCell {
     
     func custommize() {
         
-        self.labelTitle.font = Appearance.Fonts.h2
-        self.labelTitle.textColor = Appearance.Colors.secondary
+        self.labelTitle.font = Appearance.Fonts.h4
+        self.labelTitle.textColor = Appearance.Colors.third
         self.labelDetail.font = Appearance.Fonts.text
-        self.labelDetail.textColor = Appearance.Colors.secondary
+        self.labelDetail.textColor = Appearance.Colors.third
     }
 
-    
     func load(title: String, detail: String) {
         
         labelTitle.text = title
