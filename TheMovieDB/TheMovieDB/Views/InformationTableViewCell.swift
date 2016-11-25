@@ -19,6 +19,7 @@ class InformationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelDetail: UILabel!
+    @IBOutlet weak var line: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,10 +29,11 @@ class InformationTableViewCell: UITableViewCell {
     
     func custommize() {
         
-        self.labelTitle.font = Appearance.Fonts.h4
-        self.labelTitle.textColor = Appearance.Colors.third
-        self.labelDetail.font = Appearance.Fonts.text
-        self.labelDetail.textColor = Appearance.Colors.third
+        labelTitle.font = Appearance.Fonts.h4
+        labelTitle.textColor = Appearance.Colors.third
+        labelDetail.font = Appearance.Fonts.text
+        labelDetail.textColor = Appearance.Colors.third
+        line.backgroundColor = Appearance.Colors.empty
     }
 
     func load(title: String, detail: String) {
