@@ -13,6 +13,13 @@ struct CMConfigurationConstants {
     static let URIConfiguration = "configuration"
 }
 
+struct CMConfigurationJSONKeys {
+    
+    static let images = "images"
+    static let secureBaseURL = "secure_base_url"
+    static let posterSizes = "poster_sizes"
+}
+
 extension ConnectionManager {
     
     public typealias CMConfigurationType = (String?, Array<AnyObject>?)
@@ -27,9 +34,9 @@ extension ConnectionManager {
             }
             
             guard let dictionary = data.toJSON(),
-                let images = dictionary["images"] as? [String: AnyObject],
-                let baseURL = images["secure_base_url"] as? String,
-                let posterSizes = images["poster_sizes"] as? [AnyObject] else {
+                let images = dictionary[CMConfigurationJSONKeys.images] as? [String: AnyObject],
+                let baseURL = images[CMConfigurationJSONKeys.secureBaseURL] as? String,
+                let posterSizes = images[CMConfigurationJSONKeys.posterSizes] as? [AnyObject] else {
                     
                     return
             }
