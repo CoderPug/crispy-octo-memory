@@ -17,6 +17,7 @@
 		C13784A21DE8816300B9D17C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784A11DE8816300B9D17C /* Dictionary.swift */; };
 		C13784A41DE8848900B9D17C /* CMConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784A31DE8848900B9D17C /* CMConfiguration.swift */; };
 		C13784A61DE884EA00B9D17C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784A51DE884EA00B9D17C /* Data.swift */; };
+		C13784A81DE8872500B9D17C /* CMMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784A71DE8872500B9D17C /* CMMovies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		C13784A11DE8816300B9D17C /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		C13784A31DE8848900B9D17C /* CMConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMConfiguration.swift; sourceTree = "<group>"; };
 		C13784A51DE884EA00B9D17C /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		C13784A71DE8872500B9D17C /* CMMovies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMMovies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				C13784991DE8800B00B9D17C /* ConnectionManager.swift */,
 				C13784A31DE8848900B9D17C /* CMConfiguration.swift */,
+				C13784A71DE8872500B9D17C /* CMMovies.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				C13784931DE87F1E00B9D17C /* Configuration.swift in Sources */,
 				C13784A21DE8816300B9D17C /* Dictionary.swift in Sources */,
 				C13784A41DE8848900B9D17C /* CMConfiguration.swift in Sources */,
+				C13784A81DE8872500B9D17C /* CMMovies.swift in Sources */,
 				C137849C1DE8801900B9D17C /* Error.swift in Sources */,
 				C137849E1DE8802400B9D17C /* Movie.swift in Sources */,
 				C137849A1DE8800B00B9D17C /* ConnectionManager.swift in Sources */,
