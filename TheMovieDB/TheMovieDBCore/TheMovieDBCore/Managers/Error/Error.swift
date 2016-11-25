@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ChallengeError: Error {
+enum TheMovieDBError: Error {
     
     case missingConfigurationData
     case missingKey

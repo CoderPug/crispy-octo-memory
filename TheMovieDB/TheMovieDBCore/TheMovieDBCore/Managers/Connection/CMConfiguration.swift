@@ -30,6 +30,7 @@ extension ConnectionManager {
             
             guard let data = data, error == nil else {
 
+                handler(.Failure(error ?? TheMovieDBError.unkwnon))
                 return
             }
             
@@ -38,6 +39,7 @@ extension ConnectionManager {
                 let baseURL = images[CMConfigurationJSONKeys.secureBaseURL] as? String,
                 let posterSizes = images[CMConfigurationJSONKeys.posterSizes] as? [AnyObject] else {
                     
+                    handler(.Failure(TheMovieDBError.missingKey))
                     return
             }
             

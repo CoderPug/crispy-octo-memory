@@ -25,7 +25,8 @@ extension ConnectionManager {
         request(URI: CMMoviesConstants.URIDiscoverMovies) { data, response, error in
             
             guard let data = data, error == nil else {
-
+                
+                handler(.Failure(error ?? TheMovieDBError.unkwnon))
                 return
             }
             
@@ -34,6 +35,7 @@ extension ConnectionManager {
             guard let dictionary = data.toJSON(),
                 let results = dictionary[CMMoviesJSONKeys.results] as? [AnyObject] else {
                     
+                    handler(.Failure(TheMovieDBError.missingKey))
                     return
             }
             

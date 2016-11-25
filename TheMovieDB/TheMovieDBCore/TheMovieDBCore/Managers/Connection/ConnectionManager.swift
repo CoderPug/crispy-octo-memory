@@ -32,6 +32,7 @@ public struct ConnectionManager {
         
         guard let configuration = configuration else {
             
+            handler(nil, nil, TheMovieDBError.missingConfigurationData)
             return
         }
         
