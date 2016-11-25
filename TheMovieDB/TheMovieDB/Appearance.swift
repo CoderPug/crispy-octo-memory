@@ -19,7 +19,7 @@ struct Appearance {
     
     struct Fonts {
         
-        static let h1 = UIFont.boldSystemFont(ofSize: 15.0)
+        static let h1 = UIFont.boldSystemFont(ofSize: 20.0)
         static let h2 = UIFont.boldSystemFont(ofSize: 13.0)
         static let text = UIFont.systemFont(ofSize: 14.0, weight: 200)
     }

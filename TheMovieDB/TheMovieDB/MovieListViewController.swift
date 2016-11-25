@@ -9,6 +9,11 @@
 import UIKit
 import TheMovieDBCore
 
+struct MovieListSegueIdentifiers {
+    
+    static let toDetailViewController = "showDetail"
+}
+
 class MovieListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -30,7 +35,9 @@ class MovieListViewController: UIViewController {
     
     func configureView() {
         
-        collectionView.register(UINib.init(nibName: MovieCollectionViewCellConstants.nibName, bundle: Bundle.main),
+        title = NSLocalizedString("MOVIELISTVC_TITLE", comment: "MOVIELISTVC_TITLE")
+        collectionView.register(UINib.init(nibName: MovieCollectionViewCellConstants.nibName,
+                                           bundle: Bundle.main),
                                 forCellWithReuseIdentifier: MovieCollectionViewCellConstants.cellIdentifier)
     }
     
@@ -58,7 +65,6 @@ class MovieListViewController: UIViewController {
                 
                 self?.cm.configuration?.imagesBaseURL = configuration.0
                 self?.cm.configuration?.posterSizes = configuration.1
-                
                 break
             }
         }
@@ -83,7 +89,6 @@ class MovieListViewController: UIViewController {
                     
                     self?.collectionView.reloadData()
                 })
-                
                 break
             }
         }
@@ -123,6 +128,13 @@ extension MovieListViewController: UICollectionViewDataSource {
 //  MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 
 extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        let movie = movies[indexPath.row]
+        performSegue(withIdentifier: MovieListSegueIdentifiers.toDetailViewController, sender: movie)
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
