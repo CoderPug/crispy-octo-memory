@@ -20,11 +20,11 @@
 		C13784BB1DE8A2D800B9D17C /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C13784B91DE8A2D800B9D17C /* InformationTableViewCell.xib */; };
 		C13784C01DE8B10300B9D17C /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784BE1DE8B10300B9D17C /* ImageTableViewCell.swift */; };
 		C13784C11DE8B10300B9D17C /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C13784BF1DE8B10300B9D17C /* ImageTableViewCell.xib */; };
+		C19B19381DE8E98900295D99 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE391DE8E70C00B3587B /* MovieDetailViewController.swift */; };
+		C19B19391DE8E98900295D99 /* MovieDetailViewControllerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE3A1DE8E70C00B3587B /* MovieDetailViewControllerExtended.swift */; };
+		C19B193A1DE8E98900295D99 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE3C1DE8E70C00B3587B /* MovieListViewController.swift */; };
+		C19B193B1DE8E98900295D99 /* MovieListViewControllerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE3D1DE8E70C00B3587B /* MovieListViewControllerExtended.swift */; };
 		C1BFBE351DE8E64800B3587B /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE341DE8E64800B3587B /* Globals.swift */; };
-		C1BFBE3E1DE8E70C00B3587B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE391DE8E70C00B3587B /* MovieDetailViewController.swift */; };
-		C1BFBE3F1DE8E70C00B3587B /* MovieDetailViewControllerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE3A1DE8E70C00B3587B /* MovieDetailViewControllerExtended.swift */; };
-		C1BFBE401DE8E70C00B3587B /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE3C1DE8E70C00B3587B /* MovieListViewController.swift */; };
-		C1BFBE411DE8E70C00B3587B /* MovieListViewControllerExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE3D1DE8E70C00B3587B /* MovieListViewControllerExtended.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -322,14 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19B19381DE8E98900295D99 /* MovieDetailViewController.swift in Sources */,
+				C19B19391DE8E98900295D99 /* MovieDetailViewControllerExtended.swift in Sources */,
+				C19B193A1DE8E98900295D99 /* MovieListViewController.swift in Sources */,
+				C19B193B1DE8E98900295D99 /* MovieListViewControllerExtended.swift in Sources */,
 				C13784C01DE8B10300B9D17C /* ImageTableViewCell.swift in Sources */,
 				C13784BA1DE8A2D800B9D17C /* InformationTableViewCell.swift in Sources */,
 				C13784AC1DE890BF00B9D17C /* MovieCollectionViewCell.swift in Sources */,
 				C13784451DE87CEB00B9D17C /* AppDelegate.swift in Sources */,
-				C1BFBE411DE8E70C00B3587B /* MovieListViewControllerExtended.swift in Sources */,
-				C1BFBE3E1DE8E70C00B3587B /* MovieDetailViewController.swift in Sources */,
-				C1BFBE3F1DE8E70C00B3587B /* MovieDetailViewControllerExtended.swift in Sources */,
-				C1BFBE401DE8E70C00B3587B /* MovieListViewController.swift in Sources */,
 				C13784AF1DE89AA900B9D17C /* Appearance.swift in Sources */,
 				C1BFBE351DE8E64800B3587B /* Globals.swift in Sources */,
 			);
