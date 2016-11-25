@@ -43,11 +43,14 @@ extension ConnectionManager {
                 
                 if let data = item as? [String: AnyObject] {
                     
-                    dump(data)
+                    if let movie = Movie(data: data) {
+                        
+                        movies.append(movie)
+                    }
                 }
             }
             
-            handler(.Success([]))
+            handler(.Success(movies))
         }
     }
     
