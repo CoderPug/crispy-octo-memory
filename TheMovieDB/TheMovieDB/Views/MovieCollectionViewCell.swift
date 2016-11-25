@@ -9,6 +9,12 @@
 import UIKit
 import TheMovieDBCore
 
+struct MovieCollectionViewCellConstants {
+    
+    static let nibName = "MovieCollectionViewCell"
+    static let cellIdentifier = "MovieCollectionViewCell"
+}
+
 class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageViewPoster: UIImageView!
