@@ -31,6 +31,18 @@ class MovieListViewController: UIViewController {
         performRequestDiscoverMovies()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard segue.identifier == MovieListSegueIdentifiers.toDetailViewController,
+            let destination = segue.destination as? MovieDetailViewController,
+            let movie = sender as? Movie else {
+            
+                return
+        }
+        
+        destination.movie = movie
+    }
+    
     //  MARK: Private
     
     func configureView() {
@@ -43,16 +55,14 @@ class MovieListViewController: UIViewController {
     
     func configureCurrentEnvironment() {
         
-        cm.configuration = Configuration.init(APIToken: "1f54bd990f1cdfb230adb312546d765d",
-                                              serverURL: "https://api.themoviedb.org/3/")
-        cm.configuration?.language = "es"
+        cm.configuration = AppManager.sharedInstance.configuration
     }
     
     //  MARK: Requests
     
     func performRequestConfiguration() {
         
-        cm.requestConfiguration() { [weak self] result in
+        cm.requestConfiguration() { result in
             
             switch result {
                 
@@ -63,8 +73,9 @@ class MovieListViewController: UIViewController {
                 
             case let .Success(configuration):
                 
-                self?.cm.configuration?.imagesBaseURL = configuration.0
-                self?.cm.configuration?.posterSizes = configuration.1
+                AppManager.sharedInstance.configuration?.imagesBaseURL = configuration.0
+                AppManager.sharedInstance.configuration?.posterSizes = configuration.1
+                
                 break
             }
         }
@@ -116,8 +127,6 @@ extension MovieListViewController: UICollectionViewDataSource {
         
         let movie = movies[indexPath.row]
 
-        cell.setConfiguration(cm.configuration)
-        
         cell.load(movie)
         
         return cell
