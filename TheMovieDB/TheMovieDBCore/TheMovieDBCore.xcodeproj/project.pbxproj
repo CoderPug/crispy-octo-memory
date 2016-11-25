@@ -14,6 +14,7 @@
 		C137849A1DE8800B00B9D17C /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784991DE8800B00B9D17C /* ConnectionManager.swift */; };
 		C137849C1DE8801900B9D17C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137849B1DE8801900B9D17C /* Error.swift */; };
 		C137849E1DE8802400B9D17C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137849D1DE8802400B9D17C /* Movie.swift */; };
+		C13784A21DE8816300B9D17C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784A11DE8816300B9D17C /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		C13784991DE8800B00B9D17C /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		C137849B1DE8801900B9D17C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		C137849D1DE8802400B9D17C /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C13784A11DE8816300B9D17C /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				C13784921DE87F1E00B9D17C /* Configuration.swift */,
 				C13784951DE87FEA00B9D17C /* Managers */,
 				C13784981DE87FEA00B9D17C /* Models */,
+				C137849F1DE8814500B9D17C /* Resources */,
 				C13784721DE87EB800B9D17C /* Info.plist */,
 			);
 			path = TheMovieDBCore;
@@ -128,6 +131,22 @@
 				C137849D1DE8802400B9D17C /* Movie.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C137849F1DE8814500B9D17C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C13784A01DE8814500B9D17C /* Extensions */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C13784A01DE8814500B9D17C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C13784A11DE8816300B9D17C /* Dictionary.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13784931DE87F1E00B9D17C /* Configuration.swift in Sources */,
+				C13784A21DE8816300B9D17C /* Dictionary.swift in Sources */,
 				C137849C1DE8801900B9D17C /* Error.swift in Sources */,
 				C137849E1DE8802400B9D17C /* Movie.swift in Sources */,
 				C137849A1DE8800B00B9D17C /* ConnectionManager.swift in Sources */,
