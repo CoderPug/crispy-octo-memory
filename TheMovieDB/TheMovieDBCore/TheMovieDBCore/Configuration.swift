@@ -34,3 +34,16 @@ public struct Configuration: APIData {
         self.posterSizes = nil
     }
 }
+
+public class AppManager {
+    
+    public var configuration: Configuration?
+    
+    public static let sharedInstance: AppManager = AppManager()
+    
+    init() {
+        
+        self.configuration = nil
+    }
+    
+}
