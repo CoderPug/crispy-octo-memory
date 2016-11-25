@@ -14,14 +14,16 @@ public struct Movie {
     public var title: String
     public var description: String
     public var imageURL: String
-    var releaseDate: Date
+    public var genres: [AnyObject]?
+    public var releaseDate: Date?
     
-    init(id: Int, title: String, description: String, imageURL: String, releaseDate: Date) {
+    init(id: Int, title: String, description: String, imageURL: String, genres: [AnyObject]?, releaseDate: Date?) {
         
         self.id = id
         self.title = title
         self.description = description
         self.imageURL = imageURL
+        self.genres = genres
         self.releaseDate = releaseDate
     }
     
@@ -35,6 +37,7 @@ struct MovieJSONKeys {
     static let title = "title"
     static let description = "overview"
     static let imageURL = "poster_path"
+    static let genre = "genre_ids"
     static let stringDate = "release_date"
 }
 
@@ -51,7 +54,10 @@ extension Movie {
                 return nil
         }
         
-        self.init(id: id, title: title, description: description, imageURL: imageURL, releaseDate: Date())
+        let releaseDate = Date.from(movieDBFormat: stringDate)
+        let genres = data[MovieJSONKeys.genre] as? [AnyObject]
+        
+        self.init(id: id, title: title, description: description, imageURL: imageURL, genres: genres, releaseDate: releaseDate)
     }
     
 }
