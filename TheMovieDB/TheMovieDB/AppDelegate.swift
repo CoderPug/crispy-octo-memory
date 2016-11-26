@@ -19,12 +19,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let appManager = AppManager.sharedInstance
+        
         appManager.configuration = Configuration.init(APIToken: "1f54bd990f1cdfb230adb312546d765d",
                                                       serverURL: "https://api.themoviedb.org/3/")
         appManager.configuration?.language = getLanguage() ?? "en"
         
         appManager.performRequestConfiguration()
+        
+        var cm = ConnectionManager()
+        
+        cm.configuration = appManager.configuration
+        
+        cm.requestGenre() { result in
+            
+            switch result {
                 
+            case let .Failure(error):
+                
+                dump(error)
+                break
+                
+            case let .Success(movieGenres):
+                
+                GlobalManager.sharedInstance.data.movieGenres = movieGenres
+                break
+            }
+        }
+        
         globalAppearance()
         
         return true
