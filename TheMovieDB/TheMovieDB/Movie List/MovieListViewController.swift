@@ -19,7 +19,6 @@ class MovieListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var movies: [Movie] = []
-    var cm = ConnectionManager()
     var page: Int  = 1
     var totalPagesOnServer: Int?
     var requestInProcess: Bool = false
@@ -30,7 +29,6 @@ class MovieListViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
-        configureCurrentEnvironment()
         
         performRequestDiscoverMovies(page: page)
     }
@@ -60,11 +58,6 @@ class MovieListViewController: UIViewController {
                                 forCellWithReuseIdentifier: MovieCollectionViewCellConstants.cellIdentifier)
     }
     
-    func configureCurrentEnvironment() {
-        
-        cm.configuration = AppManager.sharedInstance.configuration
-    }
-    
     //  MARK: Requests
     
     func performRequestDiscoverMovies(page: Int) {
@@ -73,7 +66,7 @@ class MovieListViewController: UIViewController {
             
             self?.requestInProcess = true
             
-            self?.cm.requestDiscoverMovies(page: page) { [weak self] result in
+            GlobalManager.sharedInstance.connectionManager.requestDiscoverMovies(page: page) { [weak self] result in
                 
                 self?.requestInProcess = false
                 
