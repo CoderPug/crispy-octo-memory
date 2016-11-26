@@ -16,35 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        let appManager = AppManager.sharedInstance
+        GlobalManager.sharedInstance.setConfiguration(Configuration.init(APIToken: "1f54bd990f1cdfb230adb312546d765d",
+                                                                         serverURL: "https://api.themoviedb.org/3/",
+                                                                         language: getLanguage() ?? "en"))
         
-        appManager.configuration = Configuration.init(APIToken: "1f54bd990f1cdfb230adb312546d765d",
-                                                      serverURL: "https://api.themoviedb.org/3/")
-        appManager.configuration?.language = getLanguage() ?? "en"
-        
-        appManager.performRequestConfiguration()
-        
-        var cm = ConnectionManager()
-        
-        cm.configuration = appManager.configuration
-        
-        cm.requestGenre() { result in
-            
-            switch result {
-                
-            case let .Failure(error):
-                
-                dump(error)
-                break
-                
-            case let .Success(movieGenres):
-                
-                GlobalManager.sharedInstance.data.movieGenres = movieGenres
-                break
-            }
-        }
+        GlobalManager.sharedInstance.performRequestConfiguration()
+
+        GlobalManager.sharedInstance.performRequestMovieGenres()
         
         globalAppearance()
         
