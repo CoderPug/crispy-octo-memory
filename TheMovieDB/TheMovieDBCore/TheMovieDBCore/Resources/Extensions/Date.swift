@@ -13,7 +13,7 @@ extension Date {
     static func from(movieDBFormat string: String) -> Date? {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         return dateFormatter.date(from: string)
     }
