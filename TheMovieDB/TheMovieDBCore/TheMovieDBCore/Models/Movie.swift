@@ -126,3 +126,43 @@ extension MoviePage {
     }
     
 }
+
+//MARK: -
+
+//MARK: MovieGenre
+
+public struct MovieGenre {
+    
+    public var id: Int
+    public var name: String
+    
+    init(id: Int, name: String) {
+        
+        self.id = id
+        self.name = name
+    }
+    
+}
+
+//MARK: MovieGenre+JSON
+
+struct MovieGenreJSONKeys {
+    
+    static let id = "id"
+    static let name = "name"
+}
+
+extension MovieGenre {
+    
+    init?(data: [String: Any]) {
+        
+        guard let id = data[MovieGenreJSONKeys.id] as? Int,
+            let name = data[MovieGenreJSONKeys.name] as? String else {
+                
+                return nil
+        }
+        
+        self.init(id: id, name: name)
+    }
+    
+}
