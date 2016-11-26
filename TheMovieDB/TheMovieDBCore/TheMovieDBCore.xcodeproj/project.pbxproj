@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C137631F1DE9E2010075EF01 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137631E1DE9E2010075EF01 /* DataManager.swift */; };
 		C13784781DE87EB800B9D17C /* TheMovieDBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C137846E1DE87EB800B9D17C /* TheMovieDBCore.framework */; };
 		C137847D1DE87EB800B9D17C /* TheMovieDBCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137847C1DE87EB800B9D17C /* TheMovieDBCoreTests.swift */; };
 		C137847F1DE87EB800B9D17C /* TheMovieDBCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C13784711DE87EB800B9D17C /* TheMovieDBCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C137631E1DE9E2010075EF01 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C137846E1DE87EB800B9D17C /* TheMovieDBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheMovieDBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13784711DE87EB800B9D17C /* TheMovieDBCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheMovieDBCore.h; sourceTree = "<group>"; };
 		C13784721DE87EB800B9D17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C137631D1DE9E1F60075EF01 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C137631E1DE9E2010075EF01 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		C13784641DE87EB800B9D17C = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		C13784951DE87FEA00B9D17C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C137631D1DE9E1F60075EF01 /* Data */,
 				C13784961DE87FEA00B9D17C /* Connection */,
 				C13784971DE87FEA00B9D17C /* Error */,
 			);
@@ -274,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13784A61DE884EA00B9D17C /* Data.swift in Sources */,
+				C137631F1DE9E2010075EF01 /* DataManager.swift in Sources */,
 				C13784931DE87F1E00B9D17C /* Configuration.swift in Sources */,
 				C13784A21DE8816300B9D17C /* Dictionary.swift in Sources */,
 				C13784A41DE8848900B9D17C /* CMConfiguration.swift in Sources */,

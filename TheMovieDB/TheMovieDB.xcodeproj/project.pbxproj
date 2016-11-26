@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C13763141DE9D2520075EF01 /* TheMovieDBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; };
 		C13763181DE9D2D20075EF01 /* TheMovieDBCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C13763241DE9E2660075EF01 /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13763231DE9E2660075EF01 /* GlobalManager.swift */; };
 		C13784451DE87CEB00B9D17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784441DE87CEB00B9D17C /* AppDelegate.swift */; };
 		C137844A1DE87CEB00B9D17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13784481DE87CEB00B9D17C /* Main.storyboard */; };
 		C137844C1DE87CEB00B9D17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C137844B1DE87CEB00B9D17C /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C13763231DE9E2660075EF01 /* GlobalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
 		C13784411DE87CEB00B9D17C /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13784441DE87CEB00B9D17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C13784491DE87CEB00B9D17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C13763201DE9E24C0075EF01 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C13763231DE9E2660075EF01 /* GlobalManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C13784381DE87CEB00B9D17C = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				C1BFBE341DE8E64800B3587B /* Globals.swift */,
-				C13784441DE87CEB00B9D17C /* AppDelegate.swift */,
 				C13784AE1DE89AA900B9D17C /* Appearance.swift */,
+				C13784441DE87CEB00B9D17C /* AppDelegate.swift */,
+				C13763201DE9E24C0075EF01 /* Managers */,
 				C1BFBE381DE8E70C00B3587B /* Movie Details */,
 				C1BFBE3B1DE8E70C00B3587B /* Movie List */,
 				C137844D1DE87CEB00B9D17C /* LaunchScreen.storyboard */,
@@ -349,6 +360,7 @@
 				C13784BA1DE8A2D800B9D17C /* InformationTableViewCell.swift in Sources */,
 				C13784AC1DE890BF00B9D17C /* MovieCollectionViewCell.swift in Sources */,
 				C13784451DE87CEB00B9D17C /* AppDelegate.swift in Sources */,
+				C13763241DE9E2660075EF01 /* GlobalManager.swift in Sources */,
 				C13784AF1DE89AA900B9D17C /* Appearance.swift in Sources */,
 				C1BFBE351DE8E64800B3587B /* Globals.swift in Sources */,
 			);
