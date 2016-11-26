@@ -25,50 +25,12 @@ public struct Configuration: APIData {
     public var imagesBaseURL: String?
     public var posterSizes: Array<AnyObject>?
     
-    public init(APIToken: String, serverURL: String) {
+    public init(APIToken: String, serverURL: String, language: String?) {
         
         self.APIToken = APIToken
         self.serverURL = serverURL
-        self.language = nil
+        self.language = language
         self.imagesBaseURL = nil
         self.posterSizes = nil
-    }
-}
-
-public class AppManager {
-    
-    public var configuration: Configuration?
-    
-    public static let sharedInstance: AppManager = AppManager()
-    
-    init() {
-        
-        self.configuration = nil
-    }
-}
-
-extension AppManager {
-    
-    public func performRequestConfiguration() {
-        
-        var cm = ConnectionManager()
-        cm.configuration = self.configuration
-        
-        cm.requestConfiguration() { [weak self] result in
-            
-            switch result {
-                
-            case let .Failure(error):
-                
-                dump(error)
-                break
-                
-            case let .Success(configuration):
-                
-                self?.configuration?.imagesBaseURL = configuration.0
-                self?.configuration?.posterSizes = configuration.1
-                break
-            }
-        }
     }
 }
