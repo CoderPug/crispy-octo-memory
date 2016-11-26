@@ -23,7 +23,7 @@ class MovieListViewController: UIViewController {
     var totalPagesOnServer: Int?
     var requestInProcess: Bool = false
     
-    let numberOfElementsBeforeReloading = 5
+    let numberOfElementsBeforeReloading = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,14 +92,8 @@ class MovieListViewController: UIViewController {
                     
                     DispatchQueue.main.async(execute: { [weak self] () -> Void in
                         
-                        self?.collectionView.performBatchUpdates( {
-                        
-                            let indexes = getIndexPaths(from: currentMovies.count, upper: upcomingMovies.count)
-                            self?.collectionView.insertItems(at: indexes)
-                            
-                        }, completion: { finished in
-                            
-                        })
+                        let indexes = getIndexPaths(from: currentMovies.count, upper: upcomingMovies.count)
+                        self?.collectionView.insertItems(at: indexes)
                     })
                     break
                 }
