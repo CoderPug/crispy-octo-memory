@@ -32,7 +32,6 @@ class MovieListViewController: UIViewController {
         configureView()
         configureCurrentEnvironment()
         
-        performRequestConfiguration()
         performRequestDiscoverMovies(page: page)
     }
     
@@ -67,26 +66,6 @@ class MovieListViewController: UIViewController {
     }
     
     //  MARK: Requests
-    
-    func performRequestConfiguration() {
-        
-        cm.requestConfiguration() { result in
-            
-            switch result {
-                
-            case let .Failure(error):
-                
-                dump(error)
-                break
-                
-            case let .Success(configuration):
-                
-                AppManager.sharedInstance.configuration?.imagesBaseURL = configuration.0
-                AppManager.sharedInstance.configuration?.posterSizes = configuration.1
-                break
-            }
-        }
-    }
     
     func performRequestDiscoverMovies(page: Int) {
         

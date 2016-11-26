@@ -20,6 +20,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageViewPoster: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     
+    var task: URLSessionDataTask?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,6 +32,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         self.labelTitle.font = Appearance.Fonts.h3
         self.labelTitle.textColor = Appearance.Colors.second
+    }
+    
+    override func prepareForReuse() {
+        
+        labelTitle.text = ""
+        imageViewPoster.image = nil
+        task?.cancel()
     }
     
     func load(_ movie: Movie) {
@@ -45,24 +54,25 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         let imageURL = imagesBaseURL + "w500" + movie.imageURL
         
-        let task = URLSession.shared.dataTask(with: NSURL(string: imageURL)! as URL,
-                                   completionHandler: { (data, response, error) -> Void in
+        task = URLSession.shared.dataTask(with: NSURL(string: imageURL)! as URL,
+                                          completionHandler: { (data, response, error) -> Void in
+                                            
                                     
-                                    guard error == nil, let data = data else {
+                                            guard error == nil, let data = data else {
                                         
-                                        if error != nil {
-                                            dump(error)
-                                        }
-                                        return
-                                    }
+                                                if error != nil {
+                                                    dump(error)
+                                                }
+                                                return
+                                            }
                                     
-                                    DispatchQueue.main.async(execute: { [weak self] () -> Void in
+                                            DispatchQueue.main.async(execute: { [weak self] () -> Void in
                                         
-                                        self?.imageViewPoster.image = UIImage(data: data)
-                                    })
+                                                self?.imageViewPoster.image = UIImage(data: data)
+                                            })
         })
         
-        task.resume()
+        task?.resume()
     }
 
 }
