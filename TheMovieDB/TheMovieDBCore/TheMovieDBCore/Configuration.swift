@@ -45,5 +45,30 @@ public class AppManager {
         
         self.configuration = nil
     }
+}
+
+extension AppManager {
     
+    public func performRequestConfiguration() {
+        
+        var cm = ConnectionManager()
+        cm.configuration = self.configuration
+        
+        cm.requestConfiguration() { [weak self] result in
+            
+            switch result {
+                
+            case let .Failure(error):
+                
+                dump(error)
+                break
+                
+            case let .Success(configuration):
+                
+                self?.configuration?.imagesBaseURL = configuration.0
+                self?.configuration?.posterSizes = configuration.1
+                break
+            }
+        }
+    }
 }
