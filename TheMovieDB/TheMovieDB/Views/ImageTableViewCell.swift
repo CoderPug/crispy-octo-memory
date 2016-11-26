@@ -31,7 +31,7 @@ class ImageTableViewCell: UITableViewCell {
     
     func load(url: String) {
         
-        guard let configuration = AppManager.sharedInstance.configuration,
+        guard let configuration = GlobalManager.sharedInstance.configuration(),
             let imagesBaseURL = configuration.imagesBaseURL else {
                 
                 return

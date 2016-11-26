@@ -46,7 +46,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         labelTitle.text = movie.title
         imageViewPoster.image = nil
         
-        guard let configuration = AppManager.sharedInstance.configuration,
+        guard let configuration = GlobalManager.sharedInstance.configuration(),
             let imagesBaseURL = configuration.imagesBaseURL else {
                 
                 return
