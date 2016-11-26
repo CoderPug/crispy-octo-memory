@@ -44,7 +44,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func load(_ movie: Movie) {
         
         labelTitle.text = movie.title
-        imageViewPoster.image = nil
         
         guard let configuration = GlobalManager.sharedInstance.configuration(),
             let imagesBaseURL = configuration.imagesBaseURL else {
@@ -52,7 +51,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
                 return
         }
         
-        let imageURL = imagesBaseURL + "w500" + movie.imageURL
+        let imageURL = imagesBaseURL + "w154" + movie.imageURL
         
         task = URLSession.shared.dataTask(with: NSURL(string: imageURL)! as URL,
                                           completionHandler: { (data, response, error) -> Void in
@@ -69,6 +68,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
                                             DispatchQueue.main.async(execute: { [weak self] () -> Void in
                                         
                                                 self?.imageViewPoster.image = UIImage(data: data)
+                                                
                                             })
         })
         
