@@ -19,6 +19,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageViewPoster: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelSubtitleA: UILabel!
+    @IBOutlet weak var labelSubtitleB: UILabel!
     
     var task: URLSessionDataTask?
     
@@ -30,13 +32,19 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     func custommize() {
         
-        self.labelTitle.font = Appearance.Fonts.h3
-        self.labelTitle.textColor = Appearance.Colors.second
+        labelTitle.font = Appearance.Fonts.h3
+        labelTitle.textColor = Appearance.Colors.second
+        labelSubtitleA.font = Appearance.Fonts.detailText
+        labelSubtitleA.textColor = Appearance.Colors.second
+        labelSubtitleB.font = Appearance.Fonts.detailText
+        labelSubtitleA.textColor = Appearance.Colors.second
     }
     
     override func prepareForReuse() {
         
         labelTitle.text = ""
+        labelSubtitleA.text = ""
+        labelSubtitleB.text = ""
         imageViewPoster.image = nil
         task?.cancel()
     }
@@ -44,6 +52,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func load(_ movie: Movie) {
         
         labelTitle.text = movie.title
+        labelSubtitleA.text = movie.releaseDate?.toCustomizedDate() ?? ""
+        if let arrayGenres = GlobalManager.sharedInstance.genres(for: movie.genres as? Array<Int>) {
+            labelSubtitleB.text = arrayGenres.map({"\($0)"}).joined(separator: ", ")
+        }
         
         guard let configuration = GlobalManager.sharedInstance.configuration(),
             let imagesBaseURL = configuration.imagesBaseURL else {
