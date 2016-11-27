@@ -18,7 +18,7 @@ extension Date {
         return dateFormatter.date(from: string)
     }
     
-    public func toCustomizedString() -> String? {
+    public func toCustomizedDate() -> String? {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE, dd MMM yyy"

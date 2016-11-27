@@ -66,7 +66,7 @@ extension InformationTableViewCell {
             
         case .releaseDate:
             temporalTitle = NSLocalizedString("MOVIEDETAILVC_RELEASE_DATE", comment: "MOVIEDETAILVC_RELEASE_DATE")
-            temporalDetail = movie.releaseDate?.toCustomizedString() ?? ""
+            temporalDetail = movie.releaseDate?.toCustomizedDate() ?? ""
             break
             
         case .genre:
