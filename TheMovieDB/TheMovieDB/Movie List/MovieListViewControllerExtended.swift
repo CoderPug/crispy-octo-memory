@@ -51,7 +51,7 @@ extension MovieListViewController: UICollectionViewDataSource {
 struct LayoutConstraints {
     
     static let posterWidth: CGFloat = 160
-    static let posterHeight: CGFloat = 250
+    static let posterHeight: CGFloat = 290
     static let margin: CGFloat = 10
 }
 

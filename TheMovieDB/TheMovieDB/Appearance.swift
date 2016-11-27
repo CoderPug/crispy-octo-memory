@@ -26,6 +26,7 @@ struct Appearance {
         static let h3 = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
         static let h4 = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightMedium)
         static let text = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightRegular)
+        static let detailText = UIFont.systemFont(ofSize: 12.0, weight: UIFontWeightLight)
     }
     
 }
