@@ -50,5 +50,41 @@
             </objects>
             <point key="canvasLocation" x="-125" y="-4"/>
         </scene>
+        <!--MovieDetailInterfaceController-->
+        <scene sceneID="poX-rU-vLQ">
+            <objects>
+                <controller identifier="MovieDetailInterfaceController" id="m6U-3D-6iK" customClass="MovieDetailInterfaceController" customModule="TheMovieDBWatchOS_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="AxY-Lt-BcK">
+                            <items>
+                                <label alignment="left" text="Title" id="klu-BI-3zC">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Title" id="8by-eZ-qSZ">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="Content" numberOfLines="0" id="m7s-m3-GFK">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <label alignment="left" text="Title" id="5XB-K5-bkw">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="Content" numberOfLines="0" id="Wqr-tC-Ws0">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="labelSectionAContent" destination="m7s-m3-GFK" id="5US-Na-06u"/>
+                        <outlet property="labelSectionATitle" destination="8by-eZ-qSZ" id="Wg1-tO-5xQ"/>
+                        <outlet property="labelSectionBContent" destination="Wqr-tC-Ws0" id="jwo-d8-N6E"/>
+                        <outlet property="labelSectionBTitle" destination="5XB-K5-bkw" id="SdJ-nV-195"/>
+                        <outlet property="labelTitle" destination="klu-BI-3zC" id="bol-vM-PWS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="167" y="-4"/>
+        </scene>
     </scenes>
 </document>

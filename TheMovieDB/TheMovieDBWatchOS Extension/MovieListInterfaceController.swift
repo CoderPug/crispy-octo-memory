@@ -18,6 +18,9 @@ class MovieListInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        setTitle(NSLocalizedString("MOVIELISTVC_TITLE",
+                                   comment: "MOVIELISTVC_TITLE"))
+        
         GlobalManager.sharedInstance.connectionManager.requestDiscoverMovies(page: 1) { [weak self] result in
             
             switch result {
@@ -63,4 +66,11 @@ class MovieListInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    //  MARK: -
+    
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        
+        let movie = movies[rowIndex]
+        presentController(withName: MovieDetailInterfaceControllerConstants.name, context: movie)
+    }
 }
