@@ -12,7 +12,41 @@
         <!--Movie List Interface Controller-->
         <scene sceneID="JzG-SW-6o4">
             <objects>
-                <controller id="Qks-JU-1tU" customClass="MovieListInterfaceController" customModule="TheMovieDBWatchOS_Extension"/>
+                <controller id="Qks-JU-1tU" customClass="MovieListInterfaceController" customModule="TheMovieDBWatchOS_Extension">
+                    <items>
+                        <table alignment="left" spacing="5" id="QCM-Bt-xmO">
+                            <items>
+                                <tableRow identifier="MovieTableRow" id="eRY-jj-Jhr" customClass="MovieTableRowController" customModule="TheMovieDBWatchOS_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="iDy-5f-1HY">
+                                        <items>
+                                            <group width="1" alignment="left" layout="vertical" id="I65-4V-WHw">
+                                                <items>
+                                                    <label alignment="left" text="Title" numberOfLines="0" id="F55-Gs-HpP">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                    <label alignment="left" text="Subtitle A" id="f0F-Fc-zYe">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                    <label alignment="left" text="Subtitle B" id="OVf-ae-C5u">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="labelSubtitleA" destination="f0F-Fc-zYe" id="RPJ-Fy-pIC"/>
+                                        <outlet property="labelSubtitleB" destination="OVf-ae-C5u" id="ejE-y5-8MU"/>
+                                        <outlet property="labelTitle" destination="F55-Gs-HpP" id="7Br-8p-HTu"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="QCM-Bt-xmO" id="yJK-YL-Vdc"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="-125" y="-4"/>
         </scene>
