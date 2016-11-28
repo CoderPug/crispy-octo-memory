@@ -14,6 +14,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         
+        GlobalManager.sharedInstance.setConfiguration(Configuration.init(APIToken: "1f54bd990f1cdfb230adb312546d765d",
+                                                                         serverURL: "https://api.themoviedb.org/3/",
+                                                                         language: getLanguage() ?? "en"))
+        
+        GlobalManager.sharedInstance.performRequestConfiguration()
+        
+        GlobalManager.sharedInstance.performRequestMovieGenres()
     }
 
     func applicationDidBecomeActive() {
