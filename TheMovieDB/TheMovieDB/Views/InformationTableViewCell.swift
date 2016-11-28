@@ -66,20 +66,12 @@ extension InformationTableViewCell {
             
         case .releaseDate:
             temporalTitle = NSLocalizedString("MOVIEDETAILVC_RELEASE_DATE", comment: "MOVIEDETAILVC_RELEASE_DATE")
-            temporalDetail = movie.releaseDate?.toCustomizedDate() ?? ""
+            temporalDetail = movie.stringReleaseDate()
             break
             
         case .genre:
-            var genreString: String?
-            
-            if let arrayGenres = GlobalManager.sharedInstance.genres(for: movie.genres as? Array<Int>) {
-                genreString = arrayGenres.map({"\($0)"}).joined(separator: ", ")
-            } else if let genre = movie.genres as? Array<Int> {
-                genreString = genre.map({"\($0)"}).joined(separator: ", ")
-            }
-            
             temporalTitle = NSLocalizedString("MOVIEDETAILVC_GENRE", comment: "MOVIEDETAILVC_GENRE")
-            temporalDetail = genreString ?? ""
+            temporalDetail = GlobalManager.sharedInstance.stringGenres(for: movie.genres as? Array<Int>) ?? ""
             break
             
         default:

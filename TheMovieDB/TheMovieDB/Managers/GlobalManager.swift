@@ -51,10 +51,23 @@ extension GlobalManager {
             if let genre = movieGenres.filter({$0.id == item}).first {
                 
                 results.append(genre.name)
+            } else {
+                
+                results.append("\(item)")
             }
         }
         
         return results
+    }
+    
+    public func stringGenres(for array: Array<Int>?) -> String? {
+        
+        if let arrayGenres = genres(for: array) {
+            
+            return arrayGenres.map({"\($0)"}).joined(separator: ", ")
+        }
+        
+        return nil
     }
     
 }

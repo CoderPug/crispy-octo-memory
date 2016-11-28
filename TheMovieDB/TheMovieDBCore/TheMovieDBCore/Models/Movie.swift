@@ -29,7 +29,7 @@ public struct Movie {
     
 }
 
-//MARK: Movie+JSON
+//  MARK: Movie+JSON
 
 struct MovieJSONKeys {
     
@@ -62,9 +62,20 @@ extension Movie {
     
 }
 
-//MARK: -
+//  MARK: Movie+CustomPresentation
 
-//MARK: MoviePage
+extension Movie {
+    
+    public func stringReleaseDate() -> String? {
+        
+        return self.releaseDate?.toCustomizedDate() ?? ""
+    }
+
+}
+
+//  MARK: -
+
+//  MARK: MoviePage
 
 public struct MoviePage {
     
@@ -83,7 +94,7 @@ public struct MoviePage {
     
 }
 
-//MARK: MoviePage+JSON
+//  MARK: MoviePage+JSON
 
 struct MoviePageJSONKeys {
     
@@ -127,9 +138,9 @@ extension MoviePage {
     
 }
 
-//MARK: -
+//  MARK: -
 
-//MARK: MovieGenre
+//  MARK: MovieGenre
 
 public struct MovieGenre {
     
@@ -144,7 +155,7 @@ public struct MovieGenre {
     
 }
 
-//MARK: MovieGenre+JSON
+//  MARK: MovieGenre+JSON
 
 struct MovieGenreJSONKeys {
     

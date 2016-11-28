@@ -52,10 +52,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func load(_ movie: Movie) {
         
         labelTitle.text = movie.title
-        labelSubtitleA.text = movie.releaseDate?.toCustomizedDate() ?? ""
-        if let arrayGenres = GlobalManager.sharedInstance.genres(for: movie.genres as? Array<Int>) {
-            labelSubtitleB.text = arrayGenres.map({"\($0)"}).joined(separator: ", ")
-        }
+        labelSubtitleA.text = movie.stringReleaseDate()
+        labelSubtitleB.text = GlobalManager.sharedInstance.stringGenres(for: movie.genres as? Array<Int>) ?? ""
         
         guard let configuration = GlobalManager.sharedInstance.configuration(),
             let imagesBaseURL = configuration.imagesBaseURL else {
