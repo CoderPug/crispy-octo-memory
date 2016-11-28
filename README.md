@@ -22,4 +22,4 @@ Two screencaptures located in **Resources/** and a paw (REST Client) file  conta
 
 ###Demo
 
-![alt](http://i.imgur.com/RNdNBXN.gifv)
+![Demo](http://i.imgur.com/RNdNBXN.gifv)
