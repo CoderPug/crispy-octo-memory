@@ -38,6 +38,9 @@
 		C1C402DA1DEBCC4B008AC725 /* TheMovieDBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; };
 		C1C402DB1DEBCD26008AC725 /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13763231DE9E2660075EF01 /* GlobalManager.swift */; };
 		C1C402DC1DEBCD48008AC725 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE341DE8E64800B3587B /* Globals.swift */; };
+		C1C402E31DEBD769008AC725 /* MovieTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C402E21DEBD769008AC725 /* MovieTableRowController.swift */; };
+		C1C402E61DEBDA67008AC725 /* Appearance+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C402E51DEBDA67008AC725 /* Appearance+iOS.swift */; };
+		C1C402E71DEBDB34008AC725 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784AE1DE89AA900B9D17C /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +176,8 @@
 		C1C402AE1DEBC933008AC725 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		C1C402B01DEBC933008AC725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1C402B21DEBC933008AC725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C402E21DEBD769008AC725 /* MovieTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableRowController.swift; sourceTree = "<group>"; };
+		C1C402E51DEBDA67008AC725 /* Appearance+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Appearance+iOS.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +253,7 @@
 			children = (
 				C1BFBE341DE8E64800B3587B /* Globals.swift */,
 				C13784AE1DE89AA900B9D17C /* Appearance.swift */,
+				C1C402E51DEBDA67008AC725 /* Appearance+iOS.swift */,
 				C13784441DE87CEB00B9D17C /* AppDelegate.swift */,
 				C13763201DE9E24C0075EF01 /* Managers */,
 				C1BFBE3B1DE8E70C00B3587B /* Movie List */,
@@ -322,12 +328,21 @@
 		C1C402AB1DEBC933008AC725 /* TheMovieDBWatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C1C402AC1DEBC933008AC725 /* MovieListInterfaceController.swift */,
 				C1C402AE1DEBC933008AC725 /* ExtensionDelegate.swift */,
+				C1C402AC1DEBC933008AC725 /* MovieListInterfaceController.swift */,
+				C1C402E11DEBD769008AC725 /* Views */,
 				C1C402B01DEBC933008AC725 /* Assets.xcassets */,
 				C1C402B21DEBC933008AC725 /* Info.plist */,
 			);
 			path = "TheMovieDBWatchOS Extension";
+			sourceTree = "<group>";
+		};
+		C1C402E11DEBD769008AC725 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1C402E21DEBD769008AC725 /* MovieTableRowController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +552,7 @@
 				C19B193A1DE8E98900295D99 /* MovieListViewController.swift in Sources */,
 				C19B193B1DE8E98900295D99 /* MovieListViewControllerExtended.swift in Sources */,
 				C13784C01DE8B10300B9D17C /* ImageTableViewCell.swift in Sources */,
+				C1C402E61DEBDA67008AC725 /* Appearance+iOS.swift in Sources */,
 				C13784BA1DE8A2D800B9D17C /* InformationTableViewCell.swift in Sources */,
 				C13784AC1DE890BF00B9D17C /* MovieCollectionViewCell.swift in Sources */,
 				C13784451DE87CEB00B9D17C /* AppDelegate.swift in Sources */,
@@ -559,6 +575,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C402DC1DEBCD48008AC725 /* Globals.swift in Sources */,
+				C1C402E71DEBDB34008AC725 /* Appearance.swift in Sources */,
+				C1C402E31DEBD769008AC725 /* MovieTableRowController.swift in Sources */,
 				C1C402AF1DEBC933008AC725 /* ExtensionDelegate.swift in Sources */,
 				C1C402DB1DEBCD26008AC725 /* GlobalManager.swift in Sources */,
 				C1C402AD1DEBC933008AC725 /* MovieListInterfaceController.swift in Sources */,
