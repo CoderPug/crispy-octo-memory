@@ -30,11 +30,3 @@ struct Appearance {
     }
     
 }
-
-func globalAppearance() {
-    
-    let navigationBarAppearace = UINavigationBar.appearance()
-    navigationBarAppearace.tintColor = Appearance.Colors.first
-    navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: Appearance.Colors.first,
-                                                  NSFontAttributeName: Appearance.Fonts.h1]
-}
