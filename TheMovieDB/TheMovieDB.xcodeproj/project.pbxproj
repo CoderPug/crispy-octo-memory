@@ -45,10 +45,15 @@
 		C1C402EB1DEBE28C008AC725 /* TheMovieDBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; };
 		C1C402EC1DEBE28C008AC725 /* TheMovieDBCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1DA32791DF11E2700FA665A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA32781DF11E2700FA665A /* AppDelegate.swift */; };
-		C1DA327B1DF11E2700FA665A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA327A1DF11E2700FA665A /* ViewController.swift */; };
+		C1DA327B1DF11E2700FA665A /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA327A1DF11E2700FA665A /* MovieListViewController.swift */; };
 		C1DA327E1DF11E2700FA665A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DA327C1DF11E2700FA665A /* Main.storyboard */; };
 		C1DA32801DF11E2700FA665A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1DA327F1DF11E2700FA665A /* Assets.xcassets */; };
 		C1DA328B1DF11E2800FA665A /* TheMovieDBTvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA328A1DF11E2700FA665A /* TheMovieDBTvOSTests.swift */; };
+		C1DA32941DF11FBC00FA665A /* TheMovieDBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; };
+		C1DA32951DF11FBC00FA665A /* TheMovieDBCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C13296591DE8C0AB00028FF7 /* TheMovieDBCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1DA32991DF1202600FA665A /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13763231DE9E2660075EF01 /* GlobalManager.swift */; };
+		C1DA329A1DF1203400FA665A /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFBE341DE8E64800B3587B /* Globals.swift */; };
+		C1DA329B1DF1203700FA665A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13784AE1DE89AA900B9D17C /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,13 @@
 			remoteGlobalIDString = C1DA32751DF11E2700FA665A;
 			remoteInfo = TheMovieDBTvOS;
 		};
+		C1DA32961DF11FBC00FA665A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C13784881DE87EDA00B9D17C /* TheMovieDBCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C137846D1DE87EB800B9D17C;
+			remoteInfo = TheMovieDBCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -162,6 +174,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1DA32981DF11FBD00FA665A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C1DA32951DF11FBC00FA665A /* TheMovieDBCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -204,7 +227,7 @@
 		C1C402E81DEBDE49008AC725 /* MovieDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailInterfaceController.swift; sourceTree = "<group>"; };
 		C1DA32761DF11E2700FA665A /* TheMovieDBTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DA32781DF11E2700FA665A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1DA327A1DF11E2700FA665A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1DA327A1DF11E2700FA665A /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		C1DA327D1DF11E2700FA665A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1DA327F1DF11E2700FA665A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1DA32811DF11E2700FA665A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -248,6 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DA32941DF11FBC00FA665A /* TheMovieDBCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				C1DA32781DF11E2700FA665A /* AppDelegate.swift */,
-				C1DA327A1DF11E2700FA665A /* ViewController.swift */,
+				C1DA327A1DF11E2700FA665A /* MovieListViewController.swift */,
 				C1DA327C1DF11E2700FA665A /* Main.storyboard */,
 				C1DA327F1DF11E2700FA665A /* Assets.xcassets */,
 				C1DA32811DF11E2700FA665A /* Info.plist */,
@@ -512,10 +536,12 @@
 				C1DA32721DF11E2700FA665A /* Sources */,
 				C1DA32731DF11E2700FA665A /* Frameworks */,
 				C1DA32741DF11E2700FA665A /* Resources */,
+				C1DA32981DF11FBD00FA665A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C1DA32971DF11FBC00FA665A /* PBXTargetDependency */,
 			);
 			name = TheMovieDBTvOS;
 			productName = TheMovieDBTvOS;
@@ -573,8 +599,7 @@
 					};
 					C1DA32751DF11E2700FA665A = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7QN6NJ95ZV;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					C1DA32851DF11E2700FA665A = {
 						CreatedOnToolsVersion = 8.2;
@@ -735,7 +760,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DA327B1DF11E2700FA665A /* ViewController.swift in Sources */,
+				C1DA329B1DF1203700FA665A /* Appearance.swift in Sources */,
+				C1DA329A1DF1203400FA665A /* Globals.swift in Sources */,
+				C1DA327B1DF11E2700FA665A /* MovieListViewController.swift in Sources */,
+				C1DA32991DF1202600FA665A /* GlobalManager.swift in Sources */,
 				C1DA32791DF11E2700FA665A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,6 +813,11 @@
 			isa = PBXTargetDependency;
 			target = C1DA32751DF11E2700FA665A /* TheMovieDBTvOS */;
 			targetProxy = C1DA32871DF11E2700FA665A /* PBXContainerItemProxy */;
+		};
+		C1DA32971DF11FBC00FA665A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TheMovieDBCore;
+			targetProxy = C1DA32961DF11FBC00FA665A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1087,8 +1120,10 @@
 		C1DA328D1DF11E2800FA665A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TheMovieDBTvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderpug.TheMovieDBTvOS;
@@ -1103,8 +1138,10 @@
 		C1DA328E1DF11E2800FA665A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TheMovieDBTvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderpug.TheMovieDBTvOS;
