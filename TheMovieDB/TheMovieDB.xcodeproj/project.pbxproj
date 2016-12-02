@@ -599,6 +599,7 @@
 					};
 					C1DA32751DF11E2700FA665A = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 7QN6NJ95ZV;
 						ProvisioningStyle = Manual;
 					};
 					C1DA32851DF11E2700FA665A = {
@@ -1123,15 +1124,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7QN6NJ95ZV;
 				INFOPLIST_FILE = TheMovieDBTvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderpug.TheMovieDBTvOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdcdda44-b9af-4b88-a9b1-d384bb6707a2";
+				PROVISIONING_PROFILE_SPECIFIER = "tvOS Development Wildcard";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1141,15 +1144,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7QN6NJ95ZV;
 				INFOPLIST_FILE = TheMovieDBTvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderpug.TheMovieDBTvOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdcdda44-b9af-4b88-a9b1-d384bb6707a2";
+				PROVISIONING_PROFILE_SPECIFIER = "tvOS Development Wildcard";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1240,6 +1245,7 @@
 				C1DA328E1DF11E2800FA665A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C1DA32931DF11E2800FA665A /* Build configuration list for PBXNativeTarget "TheMovieDBTvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1248,6 +1254,7 @@
 				C1DA32901DF11E2800FA665A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
