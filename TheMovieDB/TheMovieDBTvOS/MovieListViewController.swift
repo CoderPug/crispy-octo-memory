@@ -118,36 +118,3 @@ extension MovieListViewController: UICollectionViewDataSource {
     }
     
 }
-
-//  MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
-
-struct LayoutConstraints {
-    
-    static let posterWidth: CGFloat = 350
-    static let posterHeight: CGFloat = 550
-    static let margin: CGFloat = 50
-}
-
-extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: max(self.view.frame.size.width/6, LayoutConstraints.posterWidth),
-                      height: max(self.view.frame.size.height/6, LayoutConstraints.posterHeight))
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: LayoutConstraints.margin,
-                            left: LayoutConstraints.margin,
-                            bottom: LayoutConstraints.margin,
-                            right: LayoutConstraints.margin)
-    }
-    
-}
-
-
