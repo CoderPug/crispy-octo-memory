@@ -17,14 +17,38 @@ struct MovieCollectionViewCellConstants {
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageViewPoster: UIImageView!
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet var imageViewPoster: UIImageView!
+    @IBOutlet var labelTitle: UILabel!
+    
+    @IBOutlet var unfocusedConstraintTopTitle: NSLayoutConstraint!
+    var focusedConstraintTopTitle: NSLayoutConstraint!
     
     var task: URLSessionDataTask?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        focusedConstraintTopTitle = labelTitle.topAnchor.constraint(
+            equalTo: imageViewPoster.focusedFrameGuide.bottomAnchor,
+            constant: 15.0)
+    }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        
+        focusedConstraintTopTitle.isActive = isFocused
+        unfocusedConstraintTopTitle.isActive = !isFocused
+    }
+    
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        super.didUpdateFocus(in: context, with: coordinator)
+        
+        setNeedsUpdateConstraints()
+        coordinator.addCoordinatedAnimations({
+            self.layoutIfNeeded()
+        }, completion:
+            nil
+        )
     }
     
     override func prepareForReuse() {
@@ -33,6 +57,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         imageViewPoster.image = nil
         task?.cancel()
     }
+    
+    //  MARK: -
     
     func load(_ movie: Movie) {
         
