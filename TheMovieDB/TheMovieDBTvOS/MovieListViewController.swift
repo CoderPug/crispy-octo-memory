@@ -19,6 +19,12 @@ class MovieListViewController: UIViewController {
         super.viewDidLoad()
         
         performRequestDiscoverMovies(page: 1)
+        
+        
+        collectionView.register(UINib.init(nibName: "MovieCollectionViewCell",
+                                           bundle: Bundle.main),
+                                           forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        
     }
     
     //  MARK: Requests
@@ -72,18 +78,15 @@ extension MovieListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell
         let movie = movies[indexPath.row]
         
-        let name = cell.viewWithTag(1) as? UILabel
-        let image = cell.viewWithTag(2) as? UIImageView
-        
-        name?.text = movie.title
+        cell?.labelTitle.text = movie.title
         
         guard let configuration = GlobalManager.sharedInstance.configuration(),
             let imagesBaseURL = configuration.imagesBaseURL else {
                 
-                return cell
+                return cell ?? UICollectionViewCell()
         }
         
         let imageURL = imagesBaseURL + "w500" + movie.imageURL
@@ -104,14 +107,14 @@ extension MovieListViewController: UICollectionViewDataSource {
                                             
                                             DispatchQueue.main.async(execute: { () -> Void in
                                                 
-                                                image?.image = UIImage(data: data)
+                                                cell?.imageViewPoster.image = UIImage(data: data)
                                                 
                                             })
         })
         
         task?.resume()
         
-        return cell
+        return cell ?? UICollectionViewCell()
     }
     
 }
