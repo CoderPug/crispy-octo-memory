@@ -70,7 +70,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
                 return
         }
         
-        let imageURL = imagesBaseURL + "w154" + movie.imageURL
+        let imageURL = imagesBaseURL + "w500" + movie.imageURL
         
         task = URLSession.shared.dataTask(with: NSURL(string: imageURL)! as URL,
                                           completionHandler: { (data, response, error) -> Void in

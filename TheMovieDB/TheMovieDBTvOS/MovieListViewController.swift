@@ -36,11 +36,7 @@ class MovieListViewController: UIViewController {
         
         DispatchQueue.global().async { [weak self] in
             
-            self?.requestInProcess = true
-            
             GlobalManager.sharedInstance.connectionManager.requestDiscoverMovies(page: page) { [weak self] result in
-                
-                self?.requestInProcess = false
                 
                 switch result {
                     
@@ -66,6 +62,7 @@ class MovieListViewController: UIViewController {
                     
                     DispatchQueue.main.async(execute: { [weak self] () -> Void in
                         
+                        self?.requestInProcess = false
                         self?.collectionView.insertItems(at: indexes)
                     })
                     break
@@ -104,6 +101,7 @@ extension MovieListViewController: UICollectionViewDataSource {
                 
                 if page < totalPagesOnServer {
                     
+                    requestInProcess = true
                     performRequestDiscoverMovies(page: page + 1)
                 }
             }
