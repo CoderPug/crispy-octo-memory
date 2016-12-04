@@ -14,17 +14,20 @@ class MovieListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var movies: [Movie] = []
+    var page: Int  = 1
+    var totalPagesOnServer: Int?
+    var requestInProcess: Bool = false
+    
+    let numberOfElementsBeforeReloading = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        performRequestDiscoverMovies(page: 1)
-        
-        
         collectionView.register(UINib.init(nibName: "MovieCollectionViewCell",
                                            bundle: Bundle.main),
-                                           forCellWithReuseIdentifier: "MovieCollectionViewCell")
+                                forCellWithReuseIdentifier: "MovieCollectionViewCell")
         
+        performRequestDiscoverMovies(page: page)
     }
     
     //  MARK: Requests
@@ -33,7 +36,11 @@ class MovieListViewController: UIViewController {
         
         DispatchQueue.global().async { [weak self] in
             
+            self?.requestInProcess = true
+            
             GlobalManager.sharedInstance.connectionManager.requestDiscoverMovies(page: page) { [weak self] result in
+                
+                self?.requestInProcess = false
                 
                 switch result {
                     
@@ -44,17 +51,21 @@ class MovieListViewController: UIViewController {
                     
                 case let .Success(moviePage):
                     
+                    self?.page = moviePage.page
+                    self?.totalPagesOnServer = moviePage.totalPages
+                    
                     guard let currentMovies = self?.movies,
                         let upcomingMovies = moviePage.movies else {
                             
                             return
                     }
                     
-                    self?.movies = upcomingMovies
+                    self?.movies = currentMovies + upcomingMovies
+                    
+                    let indexes = getIndexPaths(from: currentMovies.count, upper: upcomingMovies.count)
                     
                     DispatchQueue.main.async(execute: { [weak self] () -> Void in
                         
-                        let indexes = getIndexPaths(from: currentMovies.count, upper: upcomingMovies.count)
                         self?.collectionView.insertItems(at: indexes)
                     })
                     break
@@ -78,43 +89,27 @@ extension MovieListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell
-        let movie = movies[indexPath.row]
-        
-        cell?.labelTitle.text = movie.title
-        
-        guard let configuration = GlobalManager.sharedInstance.configuration(),
-            let imagesBaseURL = configuration.imagesBaseURL else {
-                
-                return cell ?? UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCellConstants.cellIdentifier,
+                                                            for: indexPath) as? MovieCollectionViewCell else {
+                                                                return UICollectionViewCell()
         }
         
-        let imageURL = imagesBaseURL + "w500" + movie.imageURL
+        let movie = movies[indexPath.row]
         
-        var task: URLSessionDataTask?
+        cell.load(movie)
         
-        task = URLSession.shared.dataTask(with: NSURL(string: imageURL)! as URL,
-                                          completionHandler: { (data, response, error) -> Void in
-                                            
-                                            
-                                            guard error == nil, let data = data else {
-                                                
-                                                if error != nil {
-                                                    dump(error)
-                                                }
-                                                return
-                                            }
-                                            
-                                            DispatchQueue.main.async(execute: { () -> Void in
-                                                
-                                                cell?.imageViewPoster.image = UIImage(data: data)
-                                                
-                                            })
-        })
+        if requestInProcess == false && indexPath.row >= (movies.count - numberOfElementsBeforeReloading) {
+            
+            if let totalPagesOnServer = totalPagesOnServer {
+                
+                if page < totalPagesOnServer {
+                    
+                    performRequestDiscoverMovies(page: page + 1)
+                }
+            }
+        }
         
-        task?.resume()
-        
-        return cell ?? UICollectionViewCell()
+        return cell
     }
     
 }
