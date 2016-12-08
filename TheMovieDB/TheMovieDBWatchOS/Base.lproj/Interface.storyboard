@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11761" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qks-JU-1tU">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Movie List Interface Controller-->
+        <scene sceneID="JzG-SW-6o4">
+            <objects>
+                <controller id="Qks-JU-1tU" customClass="MovieListInterfaceController" customModule="TheMovieDBWatchOS_Extension">
+                    <items>
+                        <table alignment="left" spacing="5" id="QCM-Bt-xmO">
+                            <items>
+                                <tableRow identifier="MovieTableRow" id="eRY-jj-Jhr" customClass="MovieTableRowController" customModule="TheMovieDBWatchOS_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="iDy-5f-1HY">
+                                        <items>
+                                            <group width="1" alignment="left" layout="vertical" id="I65-4V-WHw">
+                                                <items>
+                                                    <label alignment="left" text="Title" numberOfLines="0" id="F55-Gs-HpP">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                    <label alignment="left" text="Subtitle A" id="f0F-Fc-zYe">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                    <label alignment="left" text="Subtitle B" id="OVf-ae-C5u">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="labelSubtitleA" destination="f0F-Fc-zYe" id="RPJ-Fy-pIC"/>
+                                        <outlet property="labelSubtitleB" destination="OVf-ae-C5u" id="ejE-y5-8MU"/>
+                                        <outlet property="labelTitle" destination="F55-Gs-HpP" id="7Br-8p-HTu"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="QCM-Bt-xmO" id="yJK-YL-Vdc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-125" y="-4"/>
+        </scene>
+        <!--MovieDetailInterfaceController-->
+        <scene sceneID="poX-rU-vLQ">
+            <objects>
+                <controller identifier="MovieDetailInterfaceController" id="m6U-3D-6iK" customClass="MovieDetailInterfaceController" customModule="TheMovieDBWatchOS_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="AxY-Lt-BcK">
+                            <items>
+                                <label alignment="left" text="Title" id="klu-BI-3zC">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Title" id="8by-eZ-qSZ">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="Content" numberOfLines="0" id="m7s-m3-GFK">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <label alignment="left" text="Title" id="5XB-K5-bkw">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="Content" numberOfLines="0" id="Wqr-tC-Ws0">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="labelSectionAContent" destination="m7s-m3-GFK" id="5US-Na-06u"/>
+                        <outlet property="labelSectionATitle" destination="8by-eZ-qSZ" id="Wg1-tO-5xQ"/>
+                        <outlet property="labelSectionBContent" destination="Wqr-tC-Ws0" id="jwo-d8-N6E"/>
+                        <outlet property="labelSectionBTitle" destination="5XB-K5-bkw" id="SdJ-nV-195"/>
+                        <outlet property="labelTitle" destination="klu-BI-3zC" id="bol-vM-PWS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="167" y="-4"/>
+        </scene>
+    </scenes>
+</document>
