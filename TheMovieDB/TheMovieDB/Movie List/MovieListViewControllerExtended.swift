@@ -50,9 +50,9 @@ extension MovieListViewController: UICollectionViewDataSource {
 
 struct LayoutConstraints {
     
-    static let posterWidth: CGFloat = 160
-    static let posterHeight: CGFloat = 290
-    static let margin: CGFloat = 10
+    static let posterWidth: CGFloat = 200
+    static let posterHeight: CGFloat = 360
+    static let margin: CGFloat = 8
 }
 
 extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -68,8 +68,8 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDel
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: max(self.view.frame.size.width/4, LayoutConstraints.posterWidth),
-                      height: max(self.view.frame.size.height/4, LayoutConstraints.posterHeight))
+        return CGSize(width: min(self.view.frame.size.width/2.2, LayoutConstraints.posterWidth),
+                      height: max(self.view.frame.size.height/2.2, LayoutConstraints.posterHeight))
     }
     
     func collectionView(_ collectionView: UICollectionView,

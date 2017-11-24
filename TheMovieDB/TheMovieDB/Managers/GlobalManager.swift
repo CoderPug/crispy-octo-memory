@@ -37,18 +37,18 @@ public class GlobalManager {
 
 extension GlobalManager {
     
-    public func genres(for array: Array<Int>?) -> Array<String>? {
+    public func genres(for array: [Int]?) -> [String]? {
         
         guard let array = array, let movieGenres = data.movieGenres else {
 
             return nil
         }
         
-        var results: Array<String> = []
+        var results: [String] = []
         
         for item in array {
             
-            if let genre = movieGenres.filter({$0.id == item}).first {
+            if let genre = movieGenres.filter({ $0.id == item }).first {
                 
                 results.append(genre.name)
             } else {
@@ -60,11 +60,11 @@ extension GlobalManager {
         return results
     }
     
-    public func stringGenres(for array: Array<Int>?) -> String? {
+    public func stringGenres(for array: [Int]?) -> String? {
         
         if let arrayGenres = genres(for: array) {
             
-            return arrayGenres.map({"\($0)"}).joined(separator: ", ")
+            return arrayGenres.map({ "\($0)" }).joined(separator: ", ")
         }
         
         return nil
