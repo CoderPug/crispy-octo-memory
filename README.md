@@ -22,6 +22,17 @@ Two screencaptures located in **Resources/** and a paw (REST Client) file  conta
 
 ###Demo
 
-[Longer demo](http://imgur.com/RNdNBXN)
+iPhone app
 
-![](http://i.imgur.com/Nn8ElQl.gif)
+![](https://i.imgur.com/1qgCYrZ.gif)
+
+Apple watch app
+
+![](https://i.imgur.com/PpNsWW7.gif)
+
+Apple tv app
+
+![](https://i.imgur.com/TMS9Gd8.gif)
+
+
+[Longer demo](http://imgur.com/RNdNBXN)
